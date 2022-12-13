@@ -42,6 +42,39 @@ elif option == 'Dataset':
     #    'Column 2':[10,12,14,16]
     # })
     # df #menampilkan dataframe
+    st.write('### Import Package')
+
+    import_pack = '''
+    import numpy as np
+    import pandas as pd
+    import seaborn as sb
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from sklearn.model_selection import train_test_split
+    import warnings
+    warnings.filterwarnings('always')
+    warnings.filterwarnings('ignore')
+    from nltk.corpus import stopwords
+    from sklearn.metrics.pairwise import linear_kernel
+    from sklearn.feature_extraction.text import CountVectorizer
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from unidecode import unidecode
+
+    import nltk
+    from nltk.util import ngrams
+    '''
+
+    st.code(import_pack, language="python")
+
+    read_dataset = '''
+    resto = pd.read_csv('../dataset/sysrec_1009.csv')
+    resto.head()'''
+    st.write('### Read Dataset')
+
+    st.code(read_dataset, language="python")
+
+    resto = pd.read_csv('sysrec_1009.csv')
+    st.write(resto.head())
 elif option == 'Modeling':
     st.write("""## Draw Modeling""")  # menampilkan judul halaman
 
