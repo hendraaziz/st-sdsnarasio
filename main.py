@@ -19,6 +19,7 @@ import time
 warnings.filterwarnings('always')
 warnings.filterwarnings('ignore')
 
+nltk.download('stopwords')
 
 with st.spinner('Please wait...'):
     time.sleep(15)
