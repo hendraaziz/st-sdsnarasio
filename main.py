@@ -68,7 +68,7 @@ elif option == 'Dataset':
 
     st.code(read_dataset, language="python")
     with st.spinner('Wait for it...'):
-    time.sleep(5)
+        time.sleep(5)
     st.success('Done!')
 
     resto = pd.read_csv('../dataset/sysrec_1009.csv')
