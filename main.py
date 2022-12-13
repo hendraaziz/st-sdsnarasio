@@ -19,6 +19,10 @@ import time
 warnings.filterwarnings('always')
 warnings.filterwarnings('ignore')
 
+resto = []
+st.code(resto, language="python")
+with st.spinner('Wait for it...'):
+    time.sleep(11)
 resto = pd.read_csv('../dataset/sysrec_1009.csv')
 option = st.sidebar.selectbox(
     'Silakan pilih:',
@@ -66,18 +70,16 @@ elif option == 'Dataset':
     resto.head()'''
     st.write('### Read Dataset')
 
-    st.code(read_dataset, language="python")
-    with st.spinner('Wait for it...'):
-        time.sleep(11)
-    st.success('Done!')
+    # st.success('Done!')
 
     st.write(resto.head())
 
 elif option == 'Pre-Processing & EDA':
     # cek prosentase data kosong
     resto_null = round(100*(resto.isnull().sum())/len(resto), 2)
+    st.write('Prosentase data kosong')
     resto_null
-    st.write(resto_null)
+
 
 elif option == 'Modeling':
     st.write("""## Draw Modeling""")  # menampilkan judul halaman
