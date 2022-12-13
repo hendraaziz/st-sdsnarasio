@@ -20,9 +20,14 @@ warnings.filterwarnings('ignore')
 
 
 st.write("""
-## CAPSTONE PROJECT - Senior Data Scientist [Recomendation System]
-
+## PROJECT - Senior Data Scientist [Recommendation System]
+### Study Case Restaurant
 ---
 #### Aziz Hendra Atmaja
 ---
 """)
+
+option = st.sidebar.selectbox(
+    'Silakan pilih:',
+    ('Home', 'Dataframe', 'Modeling', 'Recommendation')
+)
