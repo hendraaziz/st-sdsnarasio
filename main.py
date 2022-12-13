@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 import warnings
+import time
 warnings.filterwarnings('always')
 warnings.filterwarnings('ignore')
 
@@ -66,6 +67,9 @@ elif option == 'Dataset':
     st.write('### Read Dataset')
 
     st.code(read_dataset, language="python")
+    with st.spinner('Wait for it...'):
+    time.sleep(5)
+    st.success('Done!')
 
     resto = pd.read_csv('../dataset/sysrec_1009.csv')
     st.write(resto.head())
