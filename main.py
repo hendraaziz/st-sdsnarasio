@@ -36,12 +36,6 @@ if option == 'Home' or option == '':
 elif option == 'Dataset':
     st.write("""## Read Dataset""")  # menampilkan judul halaman dataframe
 
-    # membuat dataframe dengan pandas yang terdiri dari 2 kolom dan 4 baris data
-    # df = pd.DataFrame({
-    #    'Column 1':[1,2,3,4],
-    #    'Column 2':[10,12,14,16]
-    # })
-    # df #menampilkan dataframe
     st.write('### Import Package')
 
     import_pack = '''
@@ -73,7 +67,7 @@ elif option == 'Dataset':
 
     st.code(read_dataset, language="python")
 
-    resto = pd.read_csv('sysrec_1009.csv')
+    resto = pd.read_csv('../dataset/sysrec_1009.csv')
     st.write(resto.head())
 elif option == 'Modeling':
     st.write("""## Draw Modeling""")  # menampilkan judul halaman
