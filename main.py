@@ -22,11 +22,11 @@ warnings.filterwarnings('ignore')
 
 option = st.sidebar.selectbox(
     'Silakan pilih:',
-    ('Home', 'Dataset', 'Modeling', 'Recommendation')
+    ('Home', 'Dataset', 'Pre-Processing & EDA', 'Modeling', 'Recommendation')
 )
 
 if option == 'Home' or option == '':
-    st.write("""# Halaman Utama""")  # menampilkan halaman utama
+    st.write("""# Welcome""")  # menampilkan halaman utama
     st.write("""
     ## PROJECT - Senior Data Scientist [Recommendation System]
     ### Study Case Restaurant
@@ -68,11 +68,16 @@ elif option == 'Dataset':
 
     st.code(read_dataset, language="python")
     with st.spinner('Wait for it...'):
-        time.sleep(5)
+        time.sleep(11)
     st.success('Done!')
 
     resto = pd.read_csv('../dataset/sysrec_1009.csv')
     st.write(resto.head())
+elif option == 'Pre-Processing & EDA':
+    # cek prosentase data kosong
+    resto_null = round(100*(resto.isnull().sum())/len(resto), 2)
+    resto_null
+    st.write(resto_null)
 elif option == 'Modeling':
     st.write("""## Draw Modeling""")  # menampilkan judul halaman
 
