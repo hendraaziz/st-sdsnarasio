@@ -109,7 +109,7 @@ st.write('### Restaurant Recommender System')
 resto_list = resto['nama'].values
 selected_resto = st.selectbox(
     "Type or select a resto name from the dropdown",
-    resto_list, on_change=False
+    resto_list
 )
 
 if st.button('Recommend'):
