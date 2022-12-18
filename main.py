@@ -31,9 +31,9 @@ import numpy as np
 import pandas as pd
 import pickle
 
-resto = pickle.load(open('/content/drive/MyDrive/learn/SDS - narasio/resto_dataset','rb'))
+resto = pickle.load(open('resto_dataset','rb'))
 
-cosine_similarities = pickle.load(open('/content/drive/MyDrive/learn/SDS - narasio/cosine_resto_model','rb'))
+cosine_similarities = pickle.load(open('cosine_resto_model','rb'))
 
 resto_df = pd.DataFrame(resto)
 
@@ -43,9 +43,9 @@ st.code(import_pack, language="python")
 
 st.write('### Load Dataset & Model')
 read_dataset = '''
-resto = pickle.load(open('/content/drive/MyDrive/learn/SDS - narasio/resto_dataset','rb'))
+resto = pickle.load(open('resto_dataset','rb'))
 
-cosine_similarities = pickle.load(open('/content/drive/MyDrive/learn/SDS - narasio/cosine_resto_model','rb'))
+cosine_similarities = pickle.load(open('cosine_resto_model','rb'))
 
 resto_df = pd.DataFrame(resto)
 '''
