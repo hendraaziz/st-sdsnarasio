@@ -92,9 +92,9 @@ def rekomendasi_review(name, cosine_similarities=cosine_similarities):
 
     # Create the top 30 similar restaurants with some of their columns
     for each in rekomend_byresto:
-        # rekom_resto = rekom_resto.append(pd.DataFrame(
-        #    resto_df[['jenis_makanan', 'rating', 'kota']][resto_df.index == each].sample()))
-        rekom_resto = pd.concat([rekom_resto, resto_df])
+        rekom_resto = rekom_resto.append(pd.DataFrame(
+            resto_df[['jenis_makanan', 'rating', 'kota']][resto_df.index == each].sample()))
+        #rekom_resto = pd.concat([rekom_resto, resto_df])
     # Drop the same named restaurants and sort only the top 10 by the highest rating
     rekom_resto = rekom_resto.drop_duplicates(
         subset=['jenis_makanan', 'rating', 'kota'], keep=False)
@@ -109,7 +109,7 @@ st.write('### Restaurant Recommender System')
 resto_list = resto['nama'].values
 selected_resto = st.selectbox(
     "Type or select a resto name from the dropdown",
-    resto_list, on_change=None
+    resto_list, on_change=False
 )
 
 if st.button('Recommend'):
