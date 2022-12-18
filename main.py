@@ -109,7 +109,7 @@ def rekomendasi_review(name, cosine_similarities=cosine_similarities):
 
 st.write('### Restaurant Recommender System')
 
-resto_list = resto_df['nama'].values
+resto_list = resto['nama'].values
 selected_resto = st.selectbox(
     "Type or select a resto name from the dropdown",
     resto_list
