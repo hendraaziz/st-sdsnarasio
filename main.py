@@ -101,9 +101,6 @@ def rekomendasi_review(name, cosine_similarities=cosine_similarities):
     rekom_resto = rekom_resto.sort_values(
         by='rating', ascending=False).head(10)
 
-    print('%s RESTO REKOMENDASI MEMILIKI KEMIRIPAN REVIEW DENGAN %s : ' %
-          (str(len(rekom_resto)), name))
-
     return rekom_resto
 
 
@@ -114,7 +111,6 @@ selected_resto = st.selectbox(
     "Type or select a resto name from the dropdown",
     resto_list
 )
-
-if st.button('Recommend'):
-    rekomend = rekomendasi_review(selected_resto)
-    st.write(rekomend)
+rekomend = rekomendasi_review(selected_resto)
+st.write('#### RESTAURANTS RECOMMENDATIONS WITH SIMILAR REVIEWS')
+st.write(rekomend)
