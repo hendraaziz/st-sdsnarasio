@@ -5,7 +5,7 @@ import pickle
 import time
 
 with st.spinner('Please wait, Data loading...'):
-    time.sleep(22)
+    time.sleep(26)
 resto = pickle.load(
     open('/home/conda/st-sds/data/resto_dataset', 'rb'))
 
@@ -61,7 +61,7 @@ st.write(resto_df.head())
 
 st.write('### Restaurant Recommender System')
 
-resto_list = resto_df['title'].values
+resto_list = resto_df['nama'].values
 selected_resto = st.selectbox(
     "Type or select a resto name from the dropdown",
     resto_list
