@@ -4,10 +4,10 @@ import pandas as pd
 import pickle
 
 resto = pickle.load(
-    open('/content/drive/MyDrive/learn/SDS - narasio/resto_dataset', 'rb'))
+    open('/home/conda/st-sds/data/resto_dataset', 'rb'))
 
 cosine_similarities = pickle.load(
-    open('/content/drive/MyDrive/learn/SDS - narasio/cosine_resto_model', 'rb'))
+    open('/home/conda/st-sds/data/cosine_resto_model', 'rb'))
 
 #
 resto_df = pd.DataFrame(resto)
