@@ -109,8 +109,10 @@ st.write('### Restaurant Recommender System')
 resto_list = resto['nama'].values
 selected_resto = st.selectbox(
     "Type or select a resto name from the dropdown",
-    resto_list
+    resto_list, on_change=None
 )
-rekomend = rekomendasi_review(selected_resto)
-st.write('#### RESTAURANTS RECOMMENDATIONS WITH SIMILAR REVIEWS')
-st.write(rekomend)
+
+if st.button('Recommend'):
+    rekomend = rekomendasi_review(selected_resto)
+    st.write('#### RESTAURANTS RECOMMENDATIONS WITH SIMILAR REVIEWS')
+    st.write(rekomend)
