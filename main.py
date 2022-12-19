@@ -3,9 +3,15 @@ import numpy as np
 import pandas as pd
 import pickle
 import time
+from PIL import Image
+
+image = Image.open('sajian.jpeg')
+
+st.image(image, caption='Sajian Masakan Nusantara')
+
 
 with st.spinner('Please wait, Data loading...'):
-    time.sleep(10)
+    time.sleep(5)
 resto = pickle.load(
     open('/home/data/resto_dataset', 'rb'))
 
