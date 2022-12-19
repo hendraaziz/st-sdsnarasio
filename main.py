@@ -7,8 +7,16 @@ from PIL import Image
 
 image = Image.open('sajian.jpeg')
 
-st.image(image, caption='Sajian Masakan Nusantara')
+st.image(image)
 
+st.write("""# Welcome""")  # menampilkan halaman utama
+st.write("""
+## PROJECT - Senior Data Scientist [Recommendation System]
+### Study Case Restaurant
+---
+#### Aziz Hendra Atmaja
+---
+""")
 
 with st.spinner('Please wait, Data loading...'):
     time.sleep(5)
@@ -22,14 +30,6 @@ cosine_similarities = pickle.load(
 #
 resto_df = pd.DataFrame(resto)
 
-st.write("""# Welcome""")  # menampilkan halaman utama
-st.write("""
-## PROJECT - Senior Data Scientist [Recommendation System]
-### Study Case Restaurant
----
-#### Aziz Hendra Atmaja
----
-""")
 
 st.write("""## Read Dataset""")  # menampilkan judul halaman dataframe
 
