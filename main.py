@@ -7,10 +7,10 @@ import time
 with st.spinner('Please wait, Data loading...'):
     time.sleep(10)
 resto = pickle.load(
-    open('/home/conda/st-sds/data/resto_dataset', 'rb'))
+    open('/home/data/resto_dataset', 'rb'))
 
 cosine_similarities = pickle.load(
-    open('/home/conda/st-sds/data/cosine_resto_model', 'rb'))
+    open('/home/data/cosine_resto_model', 'rb'))
 
 
 #
